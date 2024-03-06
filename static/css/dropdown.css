@@ -1,0 +1,33 @@
+.dropdown-box{
+    padding: 10px;
+}
+
+.dropdown-box .text{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.dropdown-box .ico{
+    color: red;
+}
+
+/*Customisando propiedad de bootstrap*/
+.dropdown-menu{
+    width: 300px;
+    min-height: 350px; 
+}
+
+.dropdown-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.item-footer{ /*para el dropdow*/
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    
+}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% import "_macro.html" as macro %}
+
+{% block contenido %}
+
+    {{macro.carga()}}
+    <div class="card p-3 shadow">
+        
+        {{macro.alert()}}
+        
+        <h1>Crea tu tarjeta de laltad</h1>
+
+        {% if qr %}
+            <form action="/miqr" method="POST">
+                <div class="form-floating mb-3">
+                    <input name="canjes"  type="number" class="form-control" id="floatingInput" placeholder="Numero de canjes" value="{{qr['canjes']}}">
+                    <label for="floatingInput">Numero de canjes</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input name="recompensa" type="text" class="form-control" id="floatingInput" placeholder="Recompensa" value="{{qr['recompensa']}}">
+                    <label for="floatingInput">Recompensa</label>
+                </div>
+                <button onclick="pantallaCarga()" class="btn btn-primary mb-3 w-100"> Modificar</button>
+            </form>
+            <a href="/qrcode" class="btn btn-dark "> Ver mi tarjeta de lealtad</a>
+            
+        {% else %}
+            <form action="/miqr" method="POST">
+                <div class="form-floating mb-3">
+                    <input name="canjes"  type="number" class="form-control" id="floatingInput" placeholder="Numero de canjes">
+                    <label for="floatingInput">Numero de canjes</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input name="recompensa" type="text" class="form-control" id="floatingInput" placeholder="Recompensa">
+                    <label for="floatingInput">Recompensa</label>
+                </div>
+                <button class="btn btn-dark mb-3 w-100"> Guardar</button>
+            </form>
+            
+        {% endif %}
+        
+    </div>
+{% endblock %}

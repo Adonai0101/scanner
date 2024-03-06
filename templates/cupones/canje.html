@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% import "_macro.html" as macro %}
+
+{% block contenido %}
+    {{macro.carga()}}
+    <div class="card p-3 shadow">  
+        {{macro.alert()}}
+        <div class="center">
+            <img class="figura_qr " src="{{url_for('static', filename = 'img/canje.svg')}}" alt="">
+        </div>
+        <h2 class="text-center">Ingresa el código para hacer valido el canje</h2>
+
+        <form action="/cupon/canje" method="POST">
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="codigo" name="codigo" placeholder="name@example.com">
+                <label for="codigo">Ingresa el código</label>
+            </div>
+            <button onclick="pantallaCarga()" class="btn btn-dark w-100">Canjear</button>
+        </form>
+
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

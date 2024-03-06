@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from '_macro.html' import alert %}
+
+{% block contenido %}
+<div class="card p-3 shadow">
+    <h1 class="text-center">Oh No! algo salio mal</h1>
+    <div class="center">
+        <img class="figura_qr" src="{{url_for('static', filename = 'img/scanererror.svg')}}" alt="">
+    </div>
+    <a href="/" class="btn btn-dark">Inicio</a>
+</div>
+{% endblock %}

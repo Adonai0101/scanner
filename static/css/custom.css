@@ -1,0 +1,129 @@
+@import url('navbar.css');
+@import url('dropdown.css');
+@import url('footer.css');
+@import url('cards.css');
+@import url('banner.css');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/*Reparando*/
+body {
+    overflow: hidden;
+}
+
+.content {
+    height: calc(100vh - 50px);
+    /* Ajusta la altura según tu footer */
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.mr {
+    margin-right: 10px;
+}
+
+.ml {
+    margin-left: 10px;
+}
+.mt-20{
+    margin-top: 20px;
+}
+
+.color-white {
+    color: white;
+}
+
+/*Foto de perfil*/
+.perfil-foto{
+    margin: 0 auto;
+    border: solid white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.none{
+    display: none;
+}
+
+.figura_qr{
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+}
+
+.cover{
+    object-fit: cover;
+}
+
+.imagenx {
+    aspect-ratio: 16 / 9; /* Ejemplo de una relación de aspecto 16:9 */
+    width: 100%; /* Opcional: hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Opcional: permite que la altura se ajuste automáticamente */
+}
+
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+
+
+
+.container{
+    max-width: 900px;
+    overflow: auto;
+    height: calc(100vh - 150px);
+
+}
+
+.scaner-container{
+    width: 300px;
+    height: 300px;
+    border: dashed black 2px;
+}
+
+.loading{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9999 !important;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(30, 30, 30);
+    
+}
+
+.loading.activate{
+    display: flex;
+}
+
+.gift-container{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gift-icon{
+    display: block;
+    font-size: 30px;
+    color: lightslategray;
+}
+
+.gift-icon.verde{
+    color: rgb(20, 108, 20);
+}
+
+.code{
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% from '_macro.html' import alert %}
+
+{% block contenido %}
+
+<h1 class="text-center">Mis tarjetas</h1>
+
+<div class="list-card">
+
+    {% for tarjeta in tarjetas %} 
+        <a class="h-card shadow" href="{{tarjeta._id}}">
+            <div class="cont-img">
+                <img class="h-card-image" src="{{tarjeta.qr.user['foto']}}" alt="">
+            </div>  
+            <div  class="info">
+                <h3>{{tarjeta.qr.user['nombre']}}</h3>
+                <p>Recompensa: {{tarjeta.qr['recompensa']}}</p>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

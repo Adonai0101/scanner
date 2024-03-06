@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% from '_macro.html' import alert %}
+
+{% block contenido %}
+
+{% set canjes = tarjeta.qr.canjes %}
+{% set x = tarjeta.canjes %}
+
+<div class="card p-2 shadow">
+
+    <div class="center">
+        <img class="perfil-foto" src="{{tarjeta.qr.user['foto']}}" alt="">
+    </div>
+
+    <h1 class="text-center">{{tarjeta.qr.user['nombre']}}</h1>
+    <p class="text-center">{{tarjeta.qr['recompensa']}}</p>
+
+    
+    <div class="border p-2 gift-container mb-3">
+        {% for i in range(canjes) %}
+            {% set color = 'verde' if i < x else 'gris' %}
+            
+            <i class="bi bi-gift-fill gift-icon {{ color }}"></i>
+        {% endfor %}
+
+    </div>
+
+    {% if x >= canjes %}
+        <p class="text-center">Felicidades has completado el desafio</p>
+        <a class="btn btn-dark " href="/cupon/{{tarjeta._id}}">Recibir recompenza</a>
+    {% else %}
+        <a class="btn btn-dark " href="/">Ir al inicio</a>
+    {% endif %}
+    
+</div>
+
+{% endblock %}

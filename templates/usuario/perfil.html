@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% import "_macro.html" as macro %}
+
+{% block contenido %}
+
+{{macro.carga()}}
+
+<div class="card p-3 shadow">
+    
+    {{macro.alert()}}
+    <img class="perfil-foto" src="{{user.foto}}" alt="" id="imagen-cargar">
+    <input type="file" id="input-cargar"  class="none">
+
+    <form action="/cuenta" method="POST">
+        <div class="form-floating mb-3">
+            <input name="nombre" type="text" class="form-control" id="floatingInput" placeholder="nombre" value="{{user.nombre}}">
+            <label for="floatingInput">Nombre</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input name="telefono" type="number" class="form-control" id="floatingInput" placeholder="Telefono" value="{{user.telefono}}">
+            <label for="floatingInput">Telefono</label>
+        </div>
+
+
+        <button onclick="pantallaCarga()" class="btn btn-dark w-100">Guardar</button>
+    </form>
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+<!--Axios-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="{{url_for('static', filename = 'js/subirFoto.js')}}"></script>
+{% endblock %}

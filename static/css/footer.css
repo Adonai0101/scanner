@@ -1,0 +1,26 @@
+.footer-bar {
+    height: 70px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-around;
+
+    padding-top: 25px;
+}
+
+.footer-bar p {
+    font-size: 15px;
+}
+
+.footer-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white
+}
+
+.footer-ico {
+    font-size: 30px;
+}

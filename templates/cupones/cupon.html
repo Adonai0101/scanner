@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% import "_macro.html" as macro %}
+
+{% block contenido %}
+    {{macro.carga()}}
+    <div class="card p-3 shadow">  
+        {{macro.alert()}}
+        <div class="center">
+            <img class="figura_qr " src="{{url_for('static', filename = 'img/gift.svg')}}" alt="">
+        </div>
+
+        <h2 class="text-center">¡Felicidades! Acabas de ganar {{cupon.qr.recompensa}}</h2>
+        <p class="text-center">Muestra el código para hacer válido el canje</p>
+        <p class="code text-center">{{cupon.codigo}}</p> 
+    </div>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

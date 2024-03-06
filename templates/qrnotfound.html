@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="card p-3 shadow">
+    <h1 class="text-center">Aun no tienes una tarjeta de lealtad registrada. </h1>
+    <div class="center">
+        <img class="figura_qr" src="{{url_for('static', filename = 'img/qrnotfound.svg')}}" alt="">
+    </div>
+    <a href="/miqr" class="btn btn-dark">Crear tarjeta de lealtad ahora</a>
+</div>
+
+
+{% endblock %}

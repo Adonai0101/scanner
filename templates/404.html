@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <div class="card p-3 shadow">
+        <div class="center">
+            <img class="figura_qr center" src="{{url_for('static', filename = 'img/404.svg')}}" alt="">
+        </div>
+    
+        <h1>Ooops!</h1>
+        <p>Parece que no pudimos encontrar lo que buscabas</p>
+        <a class="btn btn-dark " href="/">Ir al inicio</a>
+    </div>
+{% endblock %}

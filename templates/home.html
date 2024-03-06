@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% import "_macro.html" as macro %}
+
+{% block contenido %}
+    {{macro.alert()}}
+    {{macro.carga()}}
+    <div class="banner">
+        <img class="" src="{{url_for('static', filename = 'img/banner.png')}}" alt=""> 
+    </div>
+
+    <div class="list-card">
+        
+        {% for tarjeta in tarjetas %} 
+            <div class="h-card shadow">
+                <div class="cont-img">
+                    <img class="h-card-image" src="{{tarjeta.user['foto']}}" alt="">
+                </div>
+
+                <div  class="info">
+                    <h3>{{tarjeta.user['nombre']}}</h3>
+                    <p>Recompensa: {{tarjeta.recompensa}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    
+    
+{% endblock %}
